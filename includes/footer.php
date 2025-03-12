@@ -43,9 +43,6 @@
                                     if ($count) {
                                         $_SESSION['admin'] = $admin_id;
                                         redirect("admin/index.php");
-                                    } else {
-                                        msg("invalid admin Details");
-                                        redirect("footer.php");
                                     }
                                 }
                                 ?>
@@ -54,7 +51,6 @@
                     </div>
                 </div>
             </div>
-
             <a data-modal-target="developerModel" data-modal-toggle="developerModel"
                 class="py-2 px-4 border text-yellow-500 hover:border-yellow-500 rounded font-semibold">
                 Developer
@@ -108,7 +104,7 @@
 
                     <button type="button" class="absolute top-3 right-3 text-white z-10"
                         data-modal-hide="feedbackModal">
-                        <svg class="w-5 h-5 text" fill="none" stroke="currentColor" viewBox="0 0 14 14">
+                        <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 14 14">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M1 1l6 6m0 0l6 6M7 7l6-6M7 7L1 13" />
                         </svg>
@@ -148,24 +144,24 @@
                                     class="w-full mt-1 px-3 py-2 rounded-md text-black focus:ring-yellow-500 focus:border-yellow-500"
                                     placeholder="Write something..."></textarea>
                             </div>
-                            <button type="submit" name="submit"
+                            <button type="submit_feed" name="submit"
                                 class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded">
                                 Submit Feedback
                             </button>
                         </form>
                         <?php
-                        if (isset($_POST['submit'])) {
-                            $name = $_POST['name'];
-                            $subject = $_POST['subject'];
-                            $email = $_POST['email'];
-                            $feedback = $_POST['feedback'];
+                        // if (isset($_POST['submit_feed'])) {
+                        //     $name = $_POST['name'];
+                        //     $subject = $_POST['subject'];
+                        //     $email = $_POST['email'];
+                        //     $feedback = $_POST['feedback'];
 
-                            $query = $connect->query("insert into feedback (name,subject,email,feedback) value('$name','$subject','$email','$feedback')");
+                        //     $query = $connect->query("insert into feedback (name,subject,email,feedback) value('$name','$subject','$email','$feedback')");
 
-                            if ($query) {
-                                msg('feedback send sucessfull');
-                            }
-                        }
+                        //     if ($query) {
+                        //         msg('feedback send sucessfull');
+                        //     }
+                        // }
 
                         ?>
                     </div>
