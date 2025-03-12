@@ -1,4 +1,4 @@
-<div class="bg-gray-200 flex  flex-col gap-10 items-start  text-gray-800 px-[5%]">
+<div class="bg-gray-200 mt-16 fixed z-50 top-0 left-0 w-full m-0  flex  flex-col gap-10 items-start  text-gray-800 px-[5%]">
         <div class="flex justify-start items-start border-b border-gray-200 dark:border-gray-700">
             <ul class="flex flex-wrap -mb-px text-sm font-medium" id="default-tab"
                 data-tabs-toggle="#default-tab-content" role="tablist">
@@ -36,6 +36,12 @@
                         class="inline-block py-2 px-4 rounded-t-lg border-b-2 hover:text-gray-600 text-lg dark:hover:text-gray-300"
                         id="quiz-tab" data-tabs-target="#quiz" type="button" role="tab" aria-controls="quiz"
                         aria-selected="false">Quiz</button>
+                </li>
+                <li role="presentation">
+                    <button
+                        class="inline-block py-2 px-4 rounded-t-lg border-b-2 hover:text-gray-600 text-lg dark:hover:text-gray-300"
+                        id="question-tab" data-tabs-target="#question" type="button" role="tab" aria-controls="question"
+                        aria-selected="false">Add Question</button>
                 </li>
             </ul>
         </div>

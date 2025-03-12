@@ -1,6 +1,7 @@
 <?php
 
 $connect = new mysqli("localhost","root","","quizapp") or die("Error While Connecting");
+session_start();
 
 // redirect function
 function redirect($page){
