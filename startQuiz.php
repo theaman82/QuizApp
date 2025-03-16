@@ -38,7 +38,7 @@ if ($qus = $callquestion->fetch_array()){
                         <label class="flex items-center space-x-2">
                             <input type="radio" name="answer" value="<?=$qus['opt1']; ?>"
                                 class="w-4 h-4 text-blue-600">
-                            <span><?=$qus['opt1']; ?></span>
+                            <span><?=$qus['opt1'];?></span>
                         </label>
 
                         <label class="flex items-center space-x-2">
@@ -68,7 +68,23 @@ if ($qus = $callquestion->fetch_array()){
                             </svg>
                             save & next
                         </button>
+                        <?= ?>
                     </form>
+                    <?php
+                    $rank = 0;
+                        if($qus['correct_ans'] == $qus['opt1']){
+                            $rank = $rank + 2;
+                        }
+                        elseif($qus['correct_ans'] == $qus['opt2']){
+                            $rank = $rank + 2;
+                        }
+                        elseif($qus['correct_ans'] == $qus['opt3']){
+                            $rank = $rank + 2;
+                        }
+                        elseif($qus['correct_ans'] == $qus['opt4']){
+                            $rank = $rank + 2;
+                        }
+                    ?>
                 </div>
             </div>
         </div>
@@ -88,6 +104,8 @@ else{
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['next'])) {
     $_SESSION['question_index']++; // Move to the next question
+    $rank = $_POST['rank'];
+    $connect->query("insert into rank(rank) value ('$rank')");
     // redirect("start-quize.php"); // Reload page
     exit();
 }
