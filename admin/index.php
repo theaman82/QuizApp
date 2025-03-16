@@ -219,10 +219,10 @@ include_once "../config/connect.php";
                                     class="w-full p-2 border rounded">
                                 <label for="correct_answer" class="block text-sm font-medium">Correct Answer:</label>
                                 <select name="correct_answer"  required class="w-full p-2 border rounded">
-                                    <option value="1">Option 1</option>
-                                    <option value="2">Option 2</option>
-                                    <option value="3">Option 3</option>
-                                    <option value="4">Option 4</option>
+                                    <option value="option1">Option 1</option>
+                                    <option value="option2">Option 2</option>
+                                    <option value="option3">Option 3</option>
+                                    <option value="option4">Option 4</option>
                                 </select>
                             </div>
                         </div>
@@ -237,7 +237,7 @@ include_once "../config/connect.php";
                         $option2 = $_POST['option2'];
                         $option3 = $_POST['option3'];
                         $option4 = $_POST['option4'];
-                        $correct_answer = $_POST['correct_answer'];
+                        $correct_answer = $_POST[$_POST['correct_answer']];
 
                         $query =  $connect->query("insert into question (topic,question,opt1,opt2,opt3,opt4,correct_ans) value('$topic','$question','$option1','$option2','$option3','$option4','$correct_answer')");
 

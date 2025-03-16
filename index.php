@@ -13,7 +13,7 @@
 <body class="bg-[#F6F4F0]">
     <?php include_once "includes/header.php"; ?>
     <div class="h-[650px] relative w-full">
-        <img src="assets/IMG_20250310_091929.jpg" class="w-full h-full object-cover" alt="">
+        <img src="assets/desktop.jpg" class="w-full h-full object-fit" alt="">
 
         <!-- Signup Form Container -->
         <div
@@ -86,8 +86,7 @@ if (isset($_POST['submit'])) {
 
     $query = $connect->query("insert into users(name,gender,college_name,email,contact,password,c_password)value('$name','$gender','$college_name','$email','$contact','$password','$c_password') ");
     if ($query) {
-        msg("Register Successfully Down");
-        redirect('admin/index.php');
+        redirect('quiz.php');
 
     } else {
         msg("error");
