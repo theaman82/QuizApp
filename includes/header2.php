@@ -16,7 +16,7 @@ if (isset($_SESSION['user'])):
 
 ?>
 
-        <h3 class="text-lg font-semibold border border-white rounded-xl px-3 py-1">Hello, <?= $email;?></h3>
+        <h3 class="text-lg font-semibold border border-white rounded-xl px-3 py-1">Hello, <?= $username;?></h3>
         <?php endif;?>
         <a href="logout.php" class="bg-red-500 text-white font-semibold px-3 py-1 rounded hover:bg-red-600">Logout</a>
     </div>
