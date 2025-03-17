@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 <body>
-    <?php include_once "admin/includes/header.php";?>
+    <?php include_once "includes/header2.php";?>
     <?php include_once "includes/subheader.php";?>
     
 
